@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirspaceExpress.DataAccessLayer", "AirspaceExpress.DataAccessLayer\AirspaceExpress.DataAccessLayer.csproj", "{029FB18E-08B9-477C-858C-D01AE5C89364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirspaceExpress.DataAccessLayer", "AirspaceExpress.DataAccessLayer\AirspaceExpress.DataAccessLayer.csproj", "{029FB18E-08B9-477C-858C-D01AE5C89364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirspaceExpress.ConsoleTestApplication", "AirspaceExpress.ConsoleTestApplication\AirspaceExpress.ConsoleTestApplication.csproj", "{7CCD9B2A-DE72-4501-8CF4-89CA11F3675B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirspaceExpress.ConsoleTestApplication", "AirspaceExpress.ConsoleTestApplication\AirspaceExpress.ConsoleTestApplication.csproj", "{7CCD9B2A-DE72-4501-8CF4-89CA11F3675B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineExpress.BusinessAccessLayer", "AirlineExpress.BusinessAccessLayer\AirlineExpress.BusinessAccessLayer.csproj", "{1F016393-F243-4528-A3B3-0E4FC7BE090E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7CCD9B2A-DE72-4501-8CF4-89CA11F3675B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CCD9B2A-DE72-4501-8CF4-89CA11F3675B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CCD9B2A-DE72-4501-8CF4-89CA11F3675B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F016393-F243-4528-A3B3-0E4FC7BE090E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F016393-F243-4528-A3B3-0E4FC7BE090E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F016393-F243-4528-A3B3-0E4FC7BE090E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F016393-F243-4528-A3B3-0E4FC7BE090E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
