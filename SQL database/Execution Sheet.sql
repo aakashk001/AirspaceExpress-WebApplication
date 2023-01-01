@@ -64,3 +64,9 @@ select IDENT_CURRENT('Bookings')
 --To Reset Identity Value
 DBCC CHECKIDENT ('[Bookings]', RESEED, 2004);
 UPDATE Bookings SET TicketStatus = 'Cancelled' WHERE BookingId = 2004
+
+
+---EXECUTING FUNCTION 
+
+
+SELECT * FROM dbo.ufn_showFlights('Bengaluru','Delhi',1,0,'Economy')
