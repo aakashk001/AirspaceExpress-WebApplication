@@ -8,7 +8,7 @@ If you want to run this program kindly run the back end on the Visual studion wi
 And run the front end on Visual studio code terminal with CORS property of borwser as off .. You can use extenstion from chrome play store to turn off that I use Moesif CORS
 Moesif CORS -Trun this on when working on dev project. 
 
- ================================================Progress============================================
+ ============================================Progress=========================================
 01/01/2023 - Starting working on project with some documentation and SQL database. Backend it ready with Login functionality and All flight details. 
 
 10/05/2013 -- Login Functionality is completed and also being tested. Home page is also being made but coursel is not working learing bootstrap for that. 
