@@ -1,0 +1,33 @@
+<br/>
+<br/>
+<div id = "section">
+    <div class = "row">
+        <div class = "col-md-6 offset-md-3">
+            <div class="card bg-dark text-center">
+                <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+                    <h3 class = "mt-3">LOGIN TO CONTINUE</h3>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "username" placeholder="Email:abc_123@gmail.com" formControlName = "username">
+                        <br/>
+                        <span class = "errorMessage">
+                            <p *ngIf = "loginForm.controls['username'].errors?.['required'] && loginForm.controls['username'].touched " >Field is required</p>
+                            <p *ngIf = "loginForm.controls['username'].errors?.['pattern']">Invalid Email Format</p>
+                          </span>
+                        <input class = "form-control" type = "password" name = "password" placeholder="Enter your password here" formControlName = "password">
+                        <br>
+                        <span class = "errorMessage">
+                            <p *ngIf = "loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched ">Field is required</p>
+                            <p *ngIf = "loginForm.controls['password'].errors?.['minLength']">Password must be 2 to 15 character long </p>
+                          </span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="login-button" [disabled]="!loginForm.valid"  appButton>LOGIN</button>
+                    </div>
+                    <div *ngIf="errorMessage" class = "form-group">
+                        <p class = "errorMessage">{{errorMessage}}</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

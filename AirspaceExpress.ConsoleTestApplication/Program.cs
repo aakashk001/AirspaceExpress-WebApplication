@@ -14,7 +14,7 @@ namespace AirspaceExpress.ConsoleTestApplication
 
             // }
 
-         var returnval = repository.Authenticate_User("tom123@gmail.com", "tom@123");
+         var returnval = repository.Authenticate_User("maria10@gmail.com", "maria_10");
             if(returnval == 1)
             {
                 Console.WriteLine("Login Successfull");
