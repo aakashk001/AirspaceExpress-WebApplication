@@ -21,6 +21,11 @@ export class BookFlightService {
     .pipe(tap(data=> console.log(data)),catchError(this.handleError))
     
    }
+
+   getAllTravelClasses():Observable<any>{
+    return this.http.get<any>(`https://localhost:44334/api/FlightBooking/GetTravelClasses`)
+    .pipe(tap(data=> console.log(data)),catchError(this.handleError))
+   }
    
    private handleError(err:HttpErrorResponse):Observable<any>{
     let errMsg= '';

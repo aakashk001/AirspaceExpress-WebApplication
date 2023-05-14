@@ -23,16 +23,15 @@ namespace AirlineExpress.BusinessAccessLayer.Controllers
         }
         //API to fetch all the available flight from the data access layer. 
         [HttpGet]
-        public JsonResult FetchAvailableFlights(string source ,string destination , int noOfTravellers, string travelClass)
+        public JsonResult FetchAvailableFlights(string source ,string destination , int noOfTravellers, string travelClass,DateTime travelTime)
         {
             List<AvailbleFlights> availbleFlight = new List<AvailbleFlights>();
             try
             {
-                availbleFlight = repository.FetchAvailbleFlights(source, destination, noOfTravellers, travelClass);
+                availbleFlight = repository.FetchAvailbleFlights(source, destination, noOfTravellers, travelClass,travelTime);
             }
             catch (Exception)
             {
-
                 availbleFlight = null;
             }
             return Json(availbleFlight);

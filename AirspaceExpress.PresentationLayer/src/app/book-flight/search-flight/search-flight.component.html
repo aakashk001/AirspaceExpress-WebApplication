@@ -27,7 +27,6 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <!-- bind the field to required form control -->
                                 <span class="form-label">Departing</span>
                                 <input class="form-control" type="date" formControlName = "departingdate">
                             </div>
@@ -39,9 +38,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <span class="form-label">Travel class</span>
-                                <!-- bind the field to required form control -->
-                                <select class="form-control">
-                                    <!-- Add the options Economy Class (value - Economy) and Business Class (value - Business) -->
+                                <select class="form-control" formControlName = "travelClass">
+                                  <option *ngFor= "let class of travelClasses" [value] = "class">{{class}}</option>
                                 </select>
                                 <span class="select-arrow"></span>
                             </div>
