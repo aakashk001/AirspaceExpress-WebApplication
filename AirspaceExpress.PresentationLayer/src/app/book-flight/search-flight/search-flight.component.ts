@@ -14,16 +14,19 @@ export class SearchFlightComponent implements OnInit {
 
   destination!:string[];
   sources!:string[];
+  travelClasses!:string[];
   bookingForm!:FormGroup;
   ngOnInit(): void {
     this.getAllDestination();
     this.getAllSources();
+    this.getAllTravelClass();
 
     this.bookingForm = this.fb.group(
       {
         Flyingfrom:[''],
         Flyingto:[''],
-        departingdate:['']
+        departingdate:[''],
+        travelClass :['']
       }
     )
   }
@@ -43,6 +46,16 @@ getAllDestination(){
         this.sources = data;
       }
     })
+  }
+
+  getAllTravelClass(){
+    this.service.getAllTravelClasses().subscribe(
+      {
+        next:(data)=>{
+          this.travelClasses = data;
+        }
+      }
+    )
   }
   bookFlight(){
     console.log(this.bookingForm.value);
