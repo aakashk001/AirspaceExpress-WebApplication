@@ -1,1 +1,75 @@
-<p>search-flight works!</p>
+<div id = "booking">
+    <div class = "section-center">
+        <div class = "container-fluid">
+            <div class = "row">
+                <div class = "card col-md-6 offset-md-5">
+                    <h3 class ="text text-center mb-3">Search Cheap Flights</h3>
+               
+                <form [formGroup]="bookingForm" (ngSubmit)="bookFlight()">
+                    <div class = "row">
+                        <div class = "col-md-6">
+                            <div class = "form-group">
+                                <span class ="form-label">Flying from </span>
+                               <select  class = "form-control" formControlName = "Flyingfrom">
+                                <option *ngFor = "let city of sources" class = "form-control" [value] = "city">{{city}}</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class = "col-md-6">
+                            <div class = "form-group">
+                                <span class ="form-label">Flying from </span>
+                               <select  class = "form-control" formControlName = "Flyingto">
+                                <option *ngFor = "let city of destination" class = "form-control" [value] = "city">{{city}}</option>
+                               </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- bind the field to required form control -->
+                                <span class="form-label">Departing</span>
+                                <input class="form-control" type="date" formControlName = "departingdate">
+                            </div>
+                            <div class="text errorMessage">
+                                <!-- code here to display the departureDate field error messages -->
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span class="form-label">Travel class</span>
+                                <!-- bind the field to required form control -->
+                                <select class="form-control">
+                                    <!-- Add the options Economy Class (value - Economy) and Business Class (value - Business) -->
+                                </select>
+                                <span class="select-arrow"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- 
+                                style the button with appButton custom directive
+                                disable the button till searchFlightForm has all valid inputs
+                             -->
+                            <button class="btn" type="submit">
+                                Search flights
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- navigate to home component on click of Go Back button -->
+                            <button class="btn btn-outline-light">Go Back</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

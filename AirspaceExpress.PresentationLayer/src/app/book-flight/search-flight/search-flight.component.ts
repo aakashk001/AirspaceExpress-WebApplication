@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BookFlightComponent } from '../book-flight.component';
+import { BookFlightService } from 'src/app/Servies/book-flight.service';
+import { FormArrayName, FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-flight',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFlightComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service :BookFlightService,private fb:FormBuilder) { }
 
+  destination!:string[];
+  sources!:string[];
+  bookingForm!:FormGroup;
   ngOnInit(): void {
+    this.getAllDestination();
+    this.getAllSources();
+
+    this.bookingForm = this.fb.group(
+      {
+        Flyingfrom:[''],
+        Flyingto:[''],
+        departingdate:['']
+      }
+    )
+  }
+  //Appending data from the service to destination string 
+getAllDestination(){ 
+  this.service.getAllDestination().subscribe({
+    next :(data)=>{
+     // console.log(data)
+      this.destination =data;
+      //console.log(this.destination)
+  }})};
+//Appending data from the serive to soruce string
+
+  getAllSources(){
+    this.service.getAllSources().subscribe({
+      next:(data)=>{
+        this.sources = data;
+      }
+    })
+  }
+  bookFlight(){
+    console.log(this.bookingForm.value);
   }
 
 }

@@ -30,10 +30,13 @@ namespace AirlineExpress.BusinessAccessLayer.Controllers
             catch (Exception)
             {
 
+
                 userData = null;
             }
             return Json(userData);
         }
+
+        
 
     }
 }

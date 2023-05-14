@@ -24,6 +24,8 @@ namespace AirspaceExpress.DataAccessLayer.Models
         public virtual DbSet<PassengerDetails> PassengerDetails { get; set; }
         public virtual DbSet<UserData> UserData { get; set; }
 
+        public virtual DbSet<AvailbleFlights> AvailbleFlights { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");

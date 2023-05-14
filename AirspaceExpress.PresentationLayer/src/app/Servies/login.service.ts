@@ -17,7 +17,8 @@ export class LoginService {
 
    validateUser(emailId:any,password:any ):Observable<any>{
     let httparms2 = new HttpParams().set('emailId',emailId).set('password',password)
-    return this.http.get<any>(`https://localhost:44334/api/Home/AuthenticateUser`,{params:httparms2},).pipe(tap(data=>console.log(data)),catchError(this.handleError)) 
+    return this.http.get<any>(`https://localhost:44334/api/Home/AuthenticateUser`,{params:httparms2},)
+    .pipe(tap(data=>console.log(data)),catchError(this.handleError)) 
    }
 
    private handleError(err:HttpErrorResponse):Observable<any>{
