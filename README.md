@@ -15,3 +15,7 @@ Moesif CORS -Trun this on when working on dev project.
 
 10/05/2013 -- Login Functionality is completed and also being tested. Home page is also being made but coursel is not working learing bootstrap for that. 
 Currently working on the flight-booking part . 
+
+14/05/2023 - In the data layer new functionaluty added like geting source locaton and destination location from the database. 
+Serachflightcomponent almost completed need to add few validator and submit the data into the server
+
