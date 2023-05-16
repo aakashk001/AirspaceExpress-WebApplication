@@ -6,8 +6,8 @@
 --UserType can be of following -> 1. Gold, 2. Platinum, 3. Silver
 
 --OUTPUT FIELD
-IF -1 =>UserEmailId already registered. 
-IF 1 =>Successfully Registered. 
+--IF -1 =>UserEmailId already registered. 
+--IF 1 =>Successfully Registered. 
 ALTER PROCEDURE [dbo].[usp_registerUser]
 (
 @EmailId VARCHAR(50),
