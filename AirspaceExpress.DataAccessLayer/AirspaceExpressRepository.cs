@@ -36,7 +36,7 @@ namespace AirspaceExpress.DataAccessLayer
 
 
         //Function use to Fetch availale flights by calling a table value function . 
-        public List<AvailbleFlights> FetchAvailbleFlights(string source , string destination,int noOfTraverllers, string travelClass,DateTime travelTime)
+        public List<AvailbleFlights> FetchAvailbleFlights(string source , string destination,decimal noOfTraverllers, string travelClass,DateTime travelTime,int stops)
         {
             List<AvailbleFlights> allAvailableFlights = null;
             try
@@ -46,12 +46,12 @@ namespace AirspaceExpress.DataAccessLayer
                 SqlParameter prmnoOfTravellers = new SqlParameter("@NoOfTraverllers", noOfTraverllers);
                 SqlParameter prmTravelClass = new SqlParameter("@TravelClass", travelClass);
                 SqlParameter prmTravelTime = new SqlParameter("@TravelTime", travelTime);
-
-               allAvailableFlights =  context.AvailbleFlights.FromSqlRaw("SELECT * FROM dbo.ufn_FetchAvailableFlights(@Source,@Destination,@NoOfTraverllers,@TravelClass,@TravelTime)",
-                    prmSource, prmdestination, prmnoOfTravellers, prmTravelClass,prmTravelTime).ToList();
+                SqlParameter prmStops = new SqlParameter("@Stops", stops);
+                allAvailableFlights =  context.AvailbleFlights.FromSqlRaw("SELECT * FROM dbo.ufn_FetchAvailableFlights(@Source,@Destination,@NoOfTraverllers,@TravelClass,@TravelTime,@Stops)",
+                    prmSource, prmdestination, prmnoOfTravellers, prmTravelClass,prmTravelTime,prmStops).ToList();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 allAvailableFlights = null;
 

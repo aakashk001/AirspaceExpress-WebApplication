@@ -24,21 +24,21 @@ namespace AirspaceExpress.ConsoleTestApplication
             //       Console.WriteLine("Invalid Credentails");
             //   }
 
-            //var repos = repository.FetchAvailbleFlights("Bengaluru", "Delhi", 2, "Economy");
+            var repos = repository.FetchAvailbleFlights("Bengaluru", "Delhi",2, "Economy",new DateTime(2001-01-01),0);
 
-            //Console.WriteLine("{0, -12}{1, -30}{2, -30}{3, -30}{4, -30}{5}", "BaseFare", "FlightId", "FlightStatus", "AirlineName", "DepartureTime", "ArivalTime");
+            Console.WriteLine("{0, -12}{1, -30}{2, -30}{3, -30}{4, -30}{5}", "BaseFare", "FlightId", "FlightStatus", "AirlineName", "DepartureTime", "ArivalTime");
 
-            //if (repos == null)
-            //{
-            //    Console.WriteLine("Something went wrong !!!!Or not flight");
-            //}
-            //else
-            //{
-            //    foreach(var flight in repos)
-            //    {
-            //        Console.WriteLine("{0,-12}{ 1,-30}{ 2,-30}{ 3,-30}{4,-30}{5}",flight.BaseFare, flight.FlightId, flight.FlightStatus, flight.AirlineName, flight.DepartureTime, flight.ArivalTime);
-            //    }
-            //}
+            if (repos == null)
+            {
+                Console.WriteLine("Something went wrong !!!!Or not flight");
+            }
+            else
+            {
+                foreach (var flight in repos)
+                {
+                    Console.WriteLine("{0,-12}{ 1,-30}{ 2,-30}{ 3,-30}{4,-30}{5}", flight.BaseFare, flight.FlightId, flight.FlightStatus, flight.AirlineName, flight.DepartureTime, flight.ArivalTime);
+                }
+            }
 
             //var repos = repository.FetchAvailbleFlights("Bengaluru", "Delhi", 2, "Economy");
 

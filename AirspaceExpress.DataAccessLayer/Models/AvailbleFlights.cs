@@ -16,9 +16,11 @@ namespace AirspaceExpress.DataAccessLayer.Models
 
         public string AirlineName { get; set; }
 
-        public DateTime? DepartureTime { get; set; }
+        public TimeSpan DepartureTime { get; set; }
 
-        public DateTime? ArivalTime { get; set; }
+        public TimeSpan? ArivalTime { get; set; }
+
+        public decimal? Stops { get; set; }
 
     }
 }

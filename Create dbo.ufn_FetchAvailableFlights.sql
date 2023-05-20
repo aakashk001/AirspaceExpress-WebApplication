@@ -1,4 +1,12 @@
+﻿USE [AirspaceExpress]
+GO
 
+/****** Object: Table Valued Function [dbo].[ufn_FetchAvailableFlights] Script Date: 18-05-2023 07:36:46 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
 
 --=======================================================================
 ---Input Required 
@@ -14,18 +22,21 @@
 --3. Arival Time --The time at which the airline is ariving at the desintaion location 
 --4. FlightStatus  -- Weather flight is suspended or running. 
 --5 BaseFare -- cost of one ticket accoring to travel class. 
---6. Stops - if 0 non stop .else it shows how many stopage it hase. 
+--6. Stops - if 0 non stop .1 if there is any stopage. 
 --7. FlightId -- Id of the flight. 
 
 --Step 1 We need to find weather there is any flight exists for the required source and destination 
 
-=======================================================================================================
-ALTER FUNCTION ufn_FetchAvailableFlights(
+-- =======================================================================================================
+
+
+CREATE FUNCTION [dbo].[ufn_FetchAvailableFlights](
 @Source VARCHAR(50),
 @Destination VARCHAR(50),
 @NoOfTraverllers Numeric(10),
 @TravelClass VARCHAR(10),
-@TravelTime DATE
+@TravelTime DATE,
+@Stops INT
 )
 RETURNS TABLE 
 AS 
@@ -46,10 +57,8 @@ Where Source = @Source AND Destination = @Destination)
 AND AF.Class = @TravelClass
 AND FL.SeatsAvailable >= @NoOfTraverllers
 AND FL.DepartureTime >= @TravelTime
+AND FL.Stops =@Stops
 )
-GO
 
 
---Execution Script
-
-SELECT * FROM dbo.ufn_FetchAvailableFlights('Bengaluru','Delhi',2,'Economy','2001-01-01')
+SELECT * FROM dbo.ufn_FetchAvailableFlights('Bengaluru','Delhi',2,'Economy','2001-01-01',0)

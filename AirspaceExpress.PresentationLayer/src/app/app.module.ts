@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlightListComponent } from './book-flight/flight-list/flight-list.component';
 import { PassengerDetailsComponent } from './book-flight/passenger-details/passenger-details.component';
 import { SearchFlightComponent } from './book-flight/search-flight/search-flight.component';
+import { ButtonDirective } from './shared/button.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { SearchFlightComponent } from './book-flight/search-flight/search-flight
     HomeCarouselComponent,
     FlightListComponent,
     PassengerDetailsComponent,
-    SearchFlightComponent
+    SearchFlightComponent,
+    ButtonDirective
   ],
   imports: [
     ReactiveFormsModule,
