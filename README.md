@@ -19,3 +19,5 @@ Currently working on the flight-booking part .
 14/05/2023 - In the data layer new functionaluty added like geting source locaton and destination location from the database. 
 Serachflightcomponent almost completed need to add few validator and submit the data into the server
 
+21/05/2023 - Completed the working of serach component now will work on the flightList.
+
