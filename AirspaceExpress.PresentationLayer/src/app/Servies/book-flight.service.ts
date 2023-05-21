@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, tap, throwError } from 'rxjs';
 
@@ -25,6 +25,14 @@ export class BookFlightService {
    getAllTravelClasses():Observable<any>{
     return this.http.get<any>(`https://localhost:44334/api/FlightBooking/GetTravelClasses`)
     .pipe(tap(data=> console.log(data)),catchError(this.handleError))
+   }
+
+   searchFlights(source:any,destination:any,noOfTravellers:any,travelClass:any,travelTime:any,stops:any):Observable<any>{
+    let httparms3 = new HttpParams().set('source',source).set('destination',destination).set('noOfTravellers',noOfTravellers)
+    .set('travelClass',travelClass).set('travelTime',travelTime).set('stops',stops)
+    return this.http.get<any>(`https://localhost:44334/api/FlightBooking/FetchAvailableFlights`,{params:httparms3}).pipe(
+      tap(data=>console.log(data)),catchError(this.handleError)
+    )
    }
    
    private handleError(err:HttpErrorResponse):Observable<any>{

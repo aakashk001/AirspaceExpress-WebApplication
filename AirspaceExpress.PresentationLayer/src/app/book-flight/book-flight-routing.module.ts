@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchFlightComponent } from './search-flight/search-flight.component';
+import { FlightListComponent } from './flight-list/flight-list.component';
 /* import the necessary modules here */ 
 
 /* Add the required route to load corresponding component */ 
 const routes: Routes = [
-  {path :'',component:SearchFlightComponent}
-//{path: 'searchflight',component:SearchFlightComponent}
+  {path :'',component:SearchFlightComponent},
+{path:'flightList',component:FlightListComponent}
 ];
 
 @NgModule({
